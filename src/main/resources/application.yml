@@ -1,0 +1,31 @@
+# mybatis settings
+mybatis:
+  mapper-locations: "classpath:/mybatis/mapper/*.xml"
+
+spring:
+  jpa:
+    database-platform: org.hibernate.spatial.dialect.mariadb.MariaDB103SpatialDialect
+    properties:
+      hibernate:
+        '[format_sql]': true
+        ddl-auto: create #validate
+        '[physical_naming_strategy]': org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+    show-sql: false
+
+---
+
+#local db info
+spring:
+  config:
+    activate:
+      on-profile: local
+  mvc:
+    view:
+      suffix: .html
+
+  datasource:
+        driver-class-name: org.mariadb.jdbc.Driver
+        username: ENC(c7bVs/PJSBR5ogCm1jKVRw==)
+        password: ENC(YChdE4WkktGb81vbYSi6wg==)
+        url: ENC(SF/r2NVf8cf8rf16jocJ7M/a/evANBeNJ7Myri4g/8IuJSrhm3YGoBynIAiDEAQUYw7oGxCPr4bPfICxSqH2I+9BFQnnX3X5nRvsZ3x9ivmitR1mQEg9Rg==)
+
