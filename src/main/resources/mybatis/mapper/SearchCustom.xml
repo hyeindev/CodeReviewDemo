@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.dao.SearchCustomDao">
+    <select id="countByUrlAndTableName" resultType="int" parameterType="String">
+        SELECT
+            COUNT(*)
+            FROM url_mapp_table
+                WHERE CONCAT(URL,TABLE_NM) = CONCAT(#{urlAndTableName})
+    </select>
+
+    <select id="selectSearchCustomUsable" resultType="com.example.dto.SearchCustomDto" parameterType="String">
+        SELECT umt.URL_MAPP_TABLE_UID
+             , umt.URL
+             , umt.URL_PAGE_NM
+             , umt.TABLE_NM
+             , utmc.COLUMN_NM
+             , utmc.COLUMN_ALIAS
+             , utmc.IS_USE_FILTER
+             , utmc.IS_USE_COLUMN_VIEW
+        FROM url_mapp_table umt
+                 RIGHT JOIN url_table_mapp_column utmc
+                            ON umt.URL_MAPP_TABLE_UID = utmc.URL_MAPP_TABLE_UID
+        WHERE umt.URL = #{requestURI}
+    </select>
+    
+</mapper>

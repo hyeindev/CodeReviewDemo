@@ -3,6 +3,8 @@ mybatis:
   mapper-locations: "classpath:/mybatis/mapper/*.xml"
 
 spring:
+  thymeleaf:
+    suffix: .html
   jpa:
     database-platform: org.hibernate.spatial.dialect.mariadb.MariaDB103SpatialDialect
     properties:
@@ -24,8 +26,8 @@ spring:
       suffix: .html
 
   datasource:
-        driver-class-name: org.mariadb.jdbc.Driver
-        username: ENC(c7bVs/PJSBR5ogCm1jKVRw==)
-        password: ENC(YChdE4WkktGb81vbYSi6wg==)
-        url: ENC(SF/r2NVf8cf8rf16jocJ7M/a/evANBeNJ7Myri4g/8IuJSrhm3YGoBynIAiDEAQUYw7oGxCPr4bPfICxSqH2I+9BFQnnX3X5nRvsZ3x9ivmitR1mQEg9Rg==)
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        username: ENC(SgN23c3fqhNdxm80w1Hj7g==)
+        password: ENC(5Gs0BJ7jgRQRMBAmF+r7J9vT7KFLtKEl)
+        url: ENC(sHIcuTnT8IWPgh6tnjbL3ZYaW81GFwqTwGSUr31mrxIW5me16lgH5fCdjRYxBk5nsQMpSvVzksytKYyJgM/URY9oBrB3HMeH)
 
